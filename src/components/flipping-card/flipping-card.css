@@ -1,0 +1,43 @@
+.flipping-card {
+  width: 200px;
+  height: 260px;
+  perspective: 600px;
+}
+.flipping-card__inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.7s ease;
+  transform-style: preserve-3d;
+  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.25);
+}
+.flipping-card__inner_dir_up {
+  transform: rotateX(180deg);
+}
+.flipping-card__inner_dir_down {
+  transform: rotateX(-180deg);
+}
+.flipping-card__inner_dir_left {
+  transform: rotateY(-180deg);
+}
+.flipping-card__inner_dir_right {
+  transform: rotateY(180deg);
+}
+.flipping-card__face {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+}
+.flipping-card__face_back {
+  background: blue;
+  transform: rotateY(180deg);
+}
+.flipping-card__face_front {
+  background: red;
+}
+.flipping-card__inner_flipped {
+  transform: rotateY(180deg);
+}
+
+/*# sourceMappingURL=flipping-card.css.map */
