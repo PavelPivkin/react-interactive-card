@@ -1,13 +1,12 @@
 import React from 'react'
-import FlippingCard from "../components/flipping-card/FlippingCard";
+import FlippingCard from "../../components/flipping-card/FlippingCard";
+import PropTypes from 'prop-types';
 
 class FlippingCardContainer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            rotated: false,
-            isLoading: false,
-            error: null,
+            rotated: false
         };
     }
 
@@ -29,16 +28,23 @@ class FlippingCardContainer extends React.Component {
 
     render() {
         return <FlippingCard
+            className={this.props.className}
             onClick={this.onClickHandler}
             // onMouseEnter={this.onMouseEnter}
             //onMouseLeave={this.onMouseLeave}
             rotate={this.state.rotated}
-            front={''}
-            back={''}
+            front={this.props.front}
+            back={this.props.back}
         >
 
         </FlippingCard>;
     }
+}
+
+FlippingCardContainer.propTypes = {
+    front: PropTypes.object,
+    back: PropTypes.object,
+    className: PropTypes.string
 }
 
 export default FlippingCardContainer
